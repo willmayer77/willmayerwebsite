@@ -22,6 +22,16 @@ const findUserByName = (name) => {
     );
 };
 
+
+const findUserById = (id) =>
+    users["users_list"].find((user) => user["id"] === id);
+
+const addUser = (user) => {
+    users["users_list"].push(user);
+    return user;
+};
+
+
 app.get("/users", (req, res) => {
     const name = req.query.name;
     if (name != undefined) {
@@ -33,9 +43,6 @@ app.get("/users", (req, res) => {
     }
   });
 
-const findUserById = (id) =>
-    users["users_list"].find((user) => user["id"] === id);
-
 app.get("/users/:id", (req, res) => {
     const id = req.params["id"];
     let result = findUserById(id);
@@ -45,6 +52,12 @@ app.get("/users/:id", (req, res) => {
         res.send(result);
     }
 });
+
+app.post("/users", (req, res) => {
+    const userToAdd = req.body;
+    addUser(userToAdd);
+    res.send()
+})
 
 // table data
 const users = {
