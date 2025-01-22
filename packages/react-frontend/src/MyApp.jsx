@@ -23,9 +23,14 @@ function postUser(person) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(person),
+  }).then((response) => {
+    if (response.status === 201) {
+      return promise;
+    }
+    else {
+      throw new Error('Failed to insert user. Status Code: ${response.status}')
+    }
   });
-
-  return promise;
 }
 
   function removeOneCharacter(index) {
