@@ -15,27 +15,29 @@ function MyApp() {
         console.log(error);
       })
 }
+
+function postUser(person) {
+  const promise = fetch("Http://localhost:8000/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(person),
+  });
+
+  return promise;
+}
+
   function removeOneCharacter(index) {
     const updated = characters.filter((character, i) => {
       return i !== index;
     });
     setCharacters(updated);
-
-  function fetchUsers() {
-      const promise = fetch("http://localhost:8000/users");
-      return promise;
   }
 
-  function postUser(person) {
-    const promise = fetch("Http://localhost:8000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(person),
-    });
-
-    return promise;
+function fetchUsers() {
+      const promise = fetch("http://localhost:8000/users");
+      return promise;
   }
 
   useEffect(() => {
@@ -46,7 +48,6 @@ function MyApp() {
   }, [] );
 
 
-  }
   return (
     <div className="container">
       <Table 
