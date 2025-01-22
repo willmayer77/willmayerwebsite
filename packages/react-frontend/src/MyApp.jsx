@@ -9,7 +9,11 @@ function MyApp() {
   const [characters, setCharacters] = useState([]);
 
   function updateList(person) {
-    setCharacters([...characters, person])
+    postUser(person)
+    .then(() => setCharacters([...characeters, person]))
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   function removeOneCharacter(index) {
