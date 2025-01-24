@@ -8,11 +8,6 @@ const port = 8000;
 app.use(cors());
 app.use(express.json());
 
-app.use((req, res, next) => {
-    console.log(`${req.method} request to ${req.url}`);
-    next();
-});
-
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -40,14 +35,15 @@ const addUser = (user) => {
     }
     users["users_list"].push(newUser);
     //add a comment here
-    console.log("made it here too", newUser);
     return newUser;
 };
 
 const deleteUser = (deleteID) => {
+    console.log(deleteID);
     const index = users.users_list.findIndex(
-        user => user.id === deleteID
+        user => user.id == deleteID.id
     );
+    console.log(index);
     if (index !== -1) {
         users.users_list.splice(index, 1);
         return 204;
