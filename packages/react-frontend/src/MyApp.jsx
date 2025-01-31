@@ -33,31 +33,8 @@ function postUser(person) {
 }
 
 
-/*function postUser(person) {
-  console.log(JSON.stringify(person));
-  const promise = fetch("http://localhost:8000/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(person),
-  }).then((response) => {
-    if (response.status === 201) {
-      return response.json();
-    }
-    else {
-      throw new Error(`Failed to insert user. Status Code: ${response.status}`)
-    }
-  });
-  return promise;
-} */
 
-  function removeOneCharacter(index) {
-    /* const updated = characters.filter((character, i) => {
-      return i !== index;
-    });
-    setCharacters(updated); */
-
+  /*function removeOneCharacter(index) {
     const userToDelete = characters[index]; 
     const promise = fetch("http://localhost:8000/users", {
       method: "DELETE",
@@ -74,7 +51,23 @@ function postUser(person) {
       })
       .catch((error) => console.log(error));
       return promise;
-  }
+  } */
+
+  function removeOneCharacter(index) {
+    const userToDelete = characters[index];
+    fetch(`http://localhost:8000/users/${userToDelete._id}`, { // Use _id
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 204) {
+          setCharacters(characters.filter((_, i) => i !== index));
+        }
+        else {
+          throw new Error("Failed to delete user");
+        }
+      })
+      .catch((error) => console.log(error));
+  } 
 
 function fetchUsers() {
       const promise = fetch("http://localhost:8000/users");
