@@ -9,7 +9,14 @@ const Navbar = () => {
       <div className="nav-links">
         <button>ABOUT ME</button>
         <button>PROJECTS</button>
-        <button>RESUME</button>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-button"
+        >
+          RESUME
+        </a>
       </div>
     </nav>
   );
