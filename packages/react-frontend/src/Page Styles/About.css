@@ -1,0 +1,88 @@
+/* AboutMe.css */
+.about-me-page {
+  background: url("../assets/images/AboutMeBackground.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  font-family: "Julius Sans One", sans-serif;
+  padding: 60px 80px 40px 80px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 80px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid white;
+  display: inline-block;
+}
+
+.paragraphs {
+  max-width: 60%;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.photo-collage-container {
+  height: 1400px;          /* Set scrollable height here */
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 40px;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE/Edge */
+}
+
+.photo-collage-container::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}
+
+.photo-collage {
+  column-count: 3;              
+  column-gap: 20px;             
+  width: 1300px;           
+  overflow-y: auto;             
+  overflow-x: hidden;         
+  padding-right: 10px;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+
+/* hide scrollbar for other browsers */
+.photo-collage::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.photo-collage img {
+  width: 100%;                  /* Fit full column width */
+  height: auto;                 /* Maintain aspect ratio */
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  break-inside: avoid;          /* Avoid breaking inside columns */
+  border-radius: 35px;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 60px;
+}
+
+.bottom-buttons button {
+  all: unset;
+  font-size: 36px;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.bottom-buttons button:hover {
+  color: #bbbbbb;
+}
