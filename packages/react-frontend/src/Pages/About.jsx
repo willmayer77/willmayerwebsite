@@ -39,49 +39,52 @@ const About = () => {
 
   return (
     <div className="about-me-page">
-      <Navbar />
-      <div className="content">
-        <h1 className="title">ABOUT ME</h1>
-        <div className="paragraphs">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          </p>
-        </div>
-        <div className="photo-collage-container">
-          <div className="photo-collage">
+  <Navbar />
+  <div className="title-container">
+    <h1 className="title">ABOUT ME</h1>
+    <div className="title-underline"></div>
+  </div>
+
+  <div className="about-body">
+    <div className="paragraphs">
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ </p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ </p>
+ <div className="bottom-buttons">
+    <button onClick={handleProjectsClick}>PROJECTS →</button>
+    <button onClick={handleResumeClick}>RESUME →</button>
+  </div>
+    </div>
+    
+    <div className="photo-collage-container">
+      <div className="photo-collage">
           <img src= {Headshot} alt="Me" />
           <img src= {MeAndCat} alt="MeAndCat" />
           <img src= {MeAndGrant} alt="MeAndGrant" />
-          <img src= {Food} alt="Food" />
           <img src= {Dog} alt="Dog" />
-          <img src= {MeAndSiena} alt="MeAndSiena" />
           <img src= {BBQ} alt="BBQ" />
           <img src= {Camping} alt="Camping" />
+          <img src= {Food} alt="Food" />
+          <img src= {MeAndSiena} alt="MeAndSiena" />
           <img src= {Cat1} alt="Cat1" />
           <img src= {Cat2} alt="Cat2" />
           <img src= {Ducks} alt="Ducks" />
-          <img src= {Food2} alt="Food2" />
           <img src= {Food3} alt="Food3" />
           <img src= {Food4} alt="Food4" />
           <img src= {Food5} alt="Food5" />
-          <img src= {Hawaiin} alt="Hawaiin" />
           <img src= {MeAndRowan} alt="MeAndRowan" />
           <img src= {MeAndSam} alt="MeAndSam" />
+          <img src= {Food2} alt="Food2" />
           <img src= {Running} alt="Running" />
+          <img src= {Hawaiin} alt="Hawaiin" />
           <img src= {Snow1} alt="Snow1" />
           <img src= {Snow2} alt="Snow2" />
           <img src= {Spikeball} alt="Spikeball" />
-        </div>
-        </div>
-        <div className="bottom-buttons">
-          <button onClick={handleProjectsClick}>PROJECTS →</button>
-          <button onClick={handleResumeClick}>RESUME →</button>
-        </div>
       </div>
     </div>
+  </div>
+</div>
   );
 };
 
